@@ -1,0 +1,36 @@
+aside {
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .ant-menu-dark .ant-menu-item-selected {
+    background-color: #1a202c !important;
+  }
+  
+  .ant-menu-dark .ant-menu-item:hover {
+    background-color: #2d3748 !important;
+  }
+  
+  .ant-menu-dark .ant-menu-submenu-title:hover {
+    background-color: #2d3748 !important;
+  }
+  
+  .ant-menu-dark .ant-menu-item,
+  .ant-menu-dark .ant-menu-submenu-title {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  
+  .ant-menu-dark .ant-menu-item-icon,
+  .ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-expand-icon {
+    font-size: 18px;
+  }
+  
+  .ant-menu-dark .ant-menu-item-icon + span,
+  .ant-menu-dark .ant-menu-submenu-title span {
+    margin-left: 10px;
+  }
+  
+ 
+  
