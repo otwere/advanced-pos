@@ -38,6 +38,8 @@ import {
   ApartmentOutlined,
   BlockOutlined,
   AuditOutlined,
+  HddOutlined ,
+  PercentageOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import Logo from "../LogoComponent/Logo";
@@ -178,15 +180,15 @@ const Sidebar = ({ collapsed }) => {
       title: "Report Manager",
       subItems: [
         { key: "12-1", icon: <BarChartOutlined />, title: "Summary Daily Report" },
-        { key: "12-2", icon: <UnorderedListOutlined />, title: "Z-Report" },
-        { key: "12-3", icon: <UnorderedListOutlined />, title: "Debtors Reports" },
-        { key: "12-4", icon: <UnorderedListOutlined />, title: "Creditors Reports" },
-        { key: "12-5", icon: <UnorderedListOutlined />, title: "Stock Reports" },
-        { key: "12-6", icon: <UnorderedListOutlined />, title: "Tax Reports" },
-        { key: "12-7", icon: <UnorderedListOutlined />, title: "VAT Reports" },
-        { key: "12-8", icon: <UnorderedListOutlined />, title: "Sales Report" },
-        { key: "12-9", icon: <UnorderedListOutlined />, title: "Sales Customers Report" },
-        { key: "12-10", icon: <UnorderedListOutlined />, title: "Sales Report (Employee)" },
+        { key: "12-2", icon: <BlockOutlined />, title: "Z-Report" },
+        { key: "12-3", icon: <UsergroupAddOutlined />, title: "Debtors Reports" },
+        { key: "12-4", icon: <UsergroupAddOutlined />, title: "Creditors Reports" },
+        { key: "12-5", icon: <HddOutlined />, title: "Stock Reports" },
+        { key: "12-6", icon: <PercentageOutlined />, title: "Tax Reports" },
+        { key: "12-7", icon: <PercentageOutlined />, title: "VAT Reports" },
+        { key: "12-8", icon: <ShoppingCartOutlined />, title: "Sales Report" },
+        { key: "12-9", icon: <UsergroupAddOutlined />, title: "Sales Customers Report" },
+        { key: "12-10", icon: <UsergroupAddOutlined />, title: "Sales Report (Employee)" },
         { key: "12-11", icon: <UnorderedListOutlined />, title: "Sales Report Custom" },
         { key: "12-12", icon: <UnorderedListOutlined />, title: "Sales Customers Report" },
         { key: "12-13", icon: <UnorderedListOutlined />, title: "Customers Statements" },

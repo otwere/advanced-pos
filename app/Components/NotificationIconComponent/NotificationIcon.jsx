@@ -1,24 +1,29 @@
 import React, { useReducer, useState } from "react";
 import { Badge, Dropdown, Menu, Button, Modal, Input } from "antd";
 import { MailOutlined, SearchOutlined } from "@ant-design/icons";
+import { Tooltip } from 'antd';
 
-const generateUniqueMessages = (numMessages) => {
+const generateUniqueMessages = (numMessages, tillNumber) => {
   const messages = [];
   for (let i = 0; i < numMessages; i++) {
     const date = new Date();
-    date.setMinutes(date.getMinutes() + i); // Increment each message time by a minute
+    date.setMinutes(date.getMinutes() + i); // For Mpesa integration // for now increasing each minute by 1
     messages.push({
-      id: i + 1, // from Mpesa Integration
-      title: "MPESA (Till No : 000721)",
-      content: `FDE2284E3 Confirmed you Received kshs.3000 from 0712345678 Client's Name ${date.toLocaleString()}. Mpesa Balance Kshs.230,000.00`,
+      id: `${tillNumber}-${i + 1}`,
+      title: `MPESA | Till No: ${tillNumber}`,
+      content: `FDE2284E3 Confirmed you received Kshs.3000 from 0712345678 Client's Name ${date.toLocaleString()}. Mpesa Balance Kshs.230,000.00`,
       read: false,
       datetime: date.toISOString(),
+      tillNumber,
     });
   }
   return messages;
 };
 
-const initialMessages = generateUniqueMessages(25);
+const initialMessages = [
+  ...generateUniqueMessages(25, "000 721"),
+  ...generateUniqueMessages(25, "000 722"),
+];
 
 const initialState = {
   messages: initialMessages,
@@ -106,7 +111,7 @@ const NotificationIcon = () => {
 
   let messagesToDisplay = state.messages;
   if (!state.showAllMessages) {
-    messagesToDisplay = state.messages.slice(0, 9); // Display only first 5 messages by default
+    messagesToDisplay = state.messages.slice(0, 9); // Display only first 9 messages by default
   }
 
   const filteredMessages = messagesToDisplay.filter(
@@ -144,7 +149,7 @@ const NotificationIcon = () => {
             padding: "10px 20px",
             borderBottom: "1px solid #f0f0f0",
           }}
-         >
+        >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <strong style={{ color: message.read ? "#aaa" : "#000" }}>
               {message.title}
@@ -189,9 +194,11 @@ const NotificationIcon = () => {
         trigger={["click"]}
       >
         <Badge count={state.unreadCount} overflowCount={99} offset={[10, 0]}>
-          <MailOutlined
-            style={{ fontSize: 24, color: "#1890ff", marginLeft: "-4px" }}
-          />
+          <Tooltip title="Mpesa - Paybill & Till Payments" >
+            <MailOutlined
+              style={{ fontSize: 25.5, color: "#1890ff", marginLeft: "-4px", }} 
+            />
+          </Tooltip>
         </Badge>
       </Dropdown>
       <Modal
@@ -212,7 +219,7 @@ const NotificationIcon = () => {
             : ""}
         </p>
         <p style={{ fontSize: 12, color: "#999" }}>
-          Read on : {getCurrentDateTime()}
+          Read by : Nuru Blessing - MD on : {getCurrentDateTime()}
         </p>
       </Modal>
     </>

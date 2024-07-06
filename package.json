@@ -12,7 +12,6 @@
     "@ant-design/cssinjs": "^1.21.0",
     "@ant-design/icons": "^5.3.7",
     "@ant-design/nextjs-registry": "^1.0.0",
-    "@next/font": "^14.2.4",
     "antd": "^5.18.3",
     "next": "^14.2.4",
     "react": "^18",

@@ -6,7 +6,7 @@ import { Tooltip } from 'antd';
 const PosIcon = () => {
   return (
     <Link href="/" passHref>
-      <Tooltip title="Make Sales - POS">
+      <Tooltip title="Make New Sales - POS">
         <ShoppingCartOutlined className=" text-blue-500 text-3xl ml-[-6rem]" />
       </Tooltip>
     </Link>
