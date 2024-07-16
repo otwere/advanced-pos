@@ -1,12 +1,6 @@
 import React from "react";
 import { Dropdown, Avatar, Menu } from "antd";
-import { 
-  UserOutlined, 
-  SettingOutlined, 
-  QuestionCircleOutlined, 
-  LogoutOutlined, 
-  DownOutlined 
-} from "@ant-design/icons";
+import {UserOutlined,SettingOutlined,QuestionCircleOutlined,LogoutOutlined,DownOutlined} from "@ant-design/icons";
 
 const HeaderProfile = () => {
   const menu = (
@@ -14,7 +8,7 @@ const HeaderProfile = () => {
       <Menu.Item key="1">
         <div className="flex flex-col items-start p-1">
           <h6 className="font-semibold text-[15px] text-blue-700">Snave Webhub Africa (K) Limited</h6>
-          <span className="flex justify-center text-xs text-gray-600">Login By: Fadhili Achieng - Manager</span>
+          <span className="flex justify-center text-xs text-gray-600">Login By : Fadhili Achieng - Manager</span>
         </div>
         <hr className="my-0" />
       </Menu.Item>
@@ -38,14 +32,14 @@ const HeaderProfile = () => {
 
   return (
     <Dropdown overlay={menu} trigger={['click']} placement="bottomRight" className="text-xs">
-      <div className="flex items-center">
+      <div className="flex items-center mr-4">
         <Avatar 
           src="/snavelogo.png" 
           size="large" 
-          className="rounded-full h-10 w-10" // Set fixed height and width
+          className="rounded-full h-10 w-10" 
         />
-        <span className="ml-2 text-black text-sm font-medium truncate">Fadhili Achieng</span>
-        <DownOutlined className="ml-2 text-gray-700 text-xs" /> {/* Set fixed font size */}
+        <span className="ml-3 text-black text-sm font-medium truncate">Fadhili Achieng</span>
+        <DownOutlined className="ml-2 mr-3 text-gray-700 text-xs" />
       </div>
     </Dropdown>
   );

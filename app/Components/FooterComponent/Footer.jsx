@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
 import CalltoAction from "../CallToActionButton/CallToActionButton";
-import styles from '../FooterComponent/Footer.module.css';
+import styles from "../FooterComponent/Footer.module.css";
 
 const Footer = ({ collapsed }) => {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) { 
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
+      setHidden(window.scrollY <= 300);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -23,28 +18,32 @@ const Footer = ({ collapsed }) => {
 
   return (
     <footer
-      className={`fixed bottom-0 h-16 flex justify-between items-center p-4 bg-[hsl(231, 26%, 95%)] shadow-none transition-all duration-300 ${
-        hidden ? styles.hiddenFooter : ""
-      } ${collapsed ? "w-[calc(100%-88px)] ml-[90px]" : "w-[calc(100%-262px)] ml-[272px]"}`}
+      className={`fixed bottom-0 left-0 right-0 w-full  h-10 flex justify-between items-center p-4 bg-none shadow-lg transition-all duration-300 ${hidden ? styles.hiddenFooter : ""}`}
+      role="contentinfo"
     >
-      <div className="flex items-center">
-        <div className="text-xs text-gray-700">
-          &copy; 2023 - {new Date().getFullYear()} &nbsp;
-          Developed by :
-          <a
-            href="https://www.snave.info"
-            target="_"
-            className="text-blue-500 hover:text-gray-500 ml-1"
-          >
-            Snave Webhub Africa
-          </a>
-          &nbsp; | All Rights Reserved.
+      <div className="flex flex-col sm:flex-row sm:items-center w-full">
+        <div className="flex justify-between w-full sm:w-auto">
+          <div className="ml-1 text-nowrap text-xs text-gray-700 text-center sm:text-left">
+            &copy; 2023 - {new Date().getFullYear()}
+            <a
+              href="https://www.snave.info"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:text-blue-700 ml-1"
+              title="Visit Snave Webhub Africa website"
+            >
+              {/* Snave Webhub Africa  */}
+            </a> | &nbsp; All Rights Reserved.
+          </div>
+          <div className="sm:hidden mt-2">
+            <CalltoAction collapsed={collapsed} />
+          </div>
+        </div>
+        <div className="hidden sm:flex sm:pl-8 text-xs text-gray-700 w-full justify-between items-center ml-[56rem]">
+          <span>Integrated Advanced EPR - POS (version 2.0.1)</span>
+          <CalltoAction collapsed={collapsed} />
         </div>
       </div>
-      <div className="pr-12 text-xs text-gray-700">
-        Integrated Advanced EPR - POS (version 2.0.1)
-      </div>
-      <CalltoAction collapsed={collapsed} />
     </footer>
   );
 };

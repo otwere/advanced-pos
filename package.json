@@ -1,6 +1,6 @@
 {
-  "name": "antd-demo",
-  "version": "0.1.0",
+  "name": "snave-webhub-africa-pos",
+  "version": "2.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,9 +12,16 @@
     "@ant-design/cssinjs": "^1.21.0",
     "@ant-design/icons": "^5.3.7",
     "@ant-design/nextjs-registry": "^1.0.0",
+    "@react-pdf/renderer": "^3.4.4",
     "antd": "^5.18.3",
+    "chart.js": "^4.4.3",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2",
+    "moment": "^2.30.1",
     "next": "^14.2.4",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-icons": "^5.2.1"
   },

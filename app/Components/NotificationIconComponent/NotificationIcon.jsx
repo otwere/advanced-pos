@@ -194,7 +194,7 @@ const NotificationIcon = () => {
         trigger={["click"]}
       >
         <Badge count={state.unreadCount} overflowCount={99} offset={[10, 0]}>
-          <Tooltip title="Mpesa - Paybill & Till Payments" >
+          <Tooltip title="Mpesa - Payment Messages">
             <MailOutlined
               style={{ fontSize: 25.5, color: "#1890ff", marginLeft: "-4px", }} 
             />

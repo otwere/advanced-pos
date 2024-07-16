@@ -1,5 +1,5 @@
-/* Footer.module.css */
-.hidden-footer {
+
+.hiddenFooter {
   transform: translateY(100%);
-  transition: transform 0.3s ease-in-out;
+  opacity: 0;
 }

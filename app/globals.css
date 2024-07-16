@@ -8,10 +8,10 @@ body {
   margin: 0;
   padding: 0;
   font-size: 15px;
-  height: 100vh;
+  height: 100%;
   scroll-behavior: smooth;
   background: hsl(231, 26%, 95%);
-  font-family: 'Poppins', sans-serif;
+ 
   
 }
 
