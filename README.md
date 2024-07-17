@@ -1,4 +1,4 @@
-# Developed by : Otwere Evans _ Phone + 254 733 443 224 or +254 700 520 008
+# Developed by: Otwere Evans _ Phone + 254 733 443 224 or +254 700 520 008
 # Email : snaveweb@gmail.com  or otweree@gmail.com
 
 
